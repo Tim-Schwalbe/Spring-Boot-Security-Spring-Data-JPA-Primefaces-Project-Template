@@ -24,6 +24,9 @@ targetCompatibility = 1.8
 repositories {
     mavenCentral()
     jcenter()
+    maven {
+        url "http://repository.primefaces.org"
+    }
 }
 
 dependencies {
@@ -43,6 +46,10 @@ dependencies {
     //for spring mail
     compile group: 'org.springframework', name: 'spring-context-support', version: '4.2.1.RELEASE'
 
+    runtime 'org.apache.tomcat.embed:tomcat-embed-core:8.0.30'
+    runtime 'org.apache.tomcat.embed:tomcat-embed-logging-juli:8.0.30'
+    runtime 'org.apache.tomcat.embed:tomcat-embed-jasper:8.0.30'
+
     //jsf
     compile 'com.sun.faces:jsf-impl:2.2.12'
     compile 'com.sun.faces:jsf-api:2.2.12'
@@ -50,6 +57,8 @@ dependencies {
 
     //primefaces
     compile 'org.primefaces:primefaces:5.3'
+    compile 'org.primefaces.themes:all-themes:1.0.10'
+    compile 'net.bootsfaces:bootsfaces:0.7.0'
 
     // APACHE
     compile 'org.apache.commons:commons-lang3:3.0'

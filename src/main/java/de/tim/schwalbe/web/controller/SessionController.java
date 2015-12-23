@@ -14,6 +14,10 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * @author tim.schwalbe
+ * @author osca
+ */
 @Controller
 public class SessionController {
 
@@ -21,12 +25,20 @@ public class SessionController {
         @Autowired
         ProfileService profileService;
 
-        @RequestMapping(value = "/login.xhtml", method = RequestMethod.GET)
+        @RequestMapping(value = "", method = RequestMethod.GET)
+        public ModelAndView index() {
+
+                System.out.println("index page requested");
+
+                return new ModelAndView("index.xhtml");
+        }
+
+        @RequestMapping(value = "/login", method = RequestMethod.GET)
         public ModelAndView loginPage() {
 
                 System.out.println("login page requested");
 
-                return new ModelAndView("index.xhtml");
+                return new ModelAndView("login.xhtml");
         }
 
         @RequestMapping(value = "/logout", method = RequestMethod.GET)
